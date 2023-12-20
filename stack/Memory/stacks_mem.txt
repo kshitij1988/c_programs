@@ -1,0 +1,32 @@
+==6933== Memcheck, a memory error detector
+==6933== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==6933== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==6933== Command: build/stacks
+==6933== Parent PID: 6916
+==6933== 
+==6933== 
+==6933== HEAP SUMMARY:
+==6933==     in use at exit: 52 bytes in 3 blocks
+==6933==   total heap usage: 5 allocs, 2 frees, 1,092 bytes allocated
+==6933== 
+==6933== 20 bytes in 1 blocks are definitely lost in loss record 2 of 3
+==6933==    at 0x484C953: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6933==    by 0x1096B6: create_arr_stack (stack_with_array.c:39)
+==6933==    by 0x109262: stack_impl_array (main.c:9)
+==6933==    by 0x1095E3: main (main.c:77)
+==6933== 
+==6933== 32 (16 direct, 16 indirect) bytes in 1 blocks are definitely lost in loss record 3 of 3
+==6933==    at 0x4845828: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6933==    by 0x109A1A: push_LL (stack_with_linkedList.c:45)
+==6933==    by 0x109514: stack_impl_linkedList (main.c:58)
+==6933==    by 0x109605: main (main.c:84)
+==6933== 
+==6933== LEAK SUMMARY:
+==6933==    definitely lost: 36 bytes in 2 blocks
+==6933==    indirectly lost: 16 bytes in 1 blocks
+==6933==      possibly lost: 0 bytes in 0 blocks
+==6933==    still reachable: 0 bytes in 0 blocks
+==6933==         suppressed: 0 bytes in 0 blocks
+==6933== 
+==6933== For lists of detected and suppressed errors, rerun with: -s
+==6933== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
