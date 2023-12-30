@@ -5,22 +5,11 @@ Each sample counts as 0.01 seconds.
 
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  Ts/call  Ts/call  name    
-  0.00      0.00     0.00       54     0.00     0.00  isNullPtr
-  0.00      0.00     0.00        8     0.00     0.00  isNullPtr
-  0.00      0.00     0.00        8     0.00     0.00  is_arr_full
-  0.00      0.00     0.00        8     0.00     0.00  is_list_empty
-  0.00      0.00     0.00        8     0.00     0.00  push_arr
-  0.00      0.00     0.00        6     0.00     0.00  is_arr_empty
-  0.00      0.00     0.00        4     0.00     0.00  peek_arr
-  0.00      0.00     0.00        4     0.00     0.00  print_arr_stack
-  0.00      0.00     0.00        3     0.00     0.00  peek_LL
-  0.00      0.00     0.00        3     0.00     0.00  print_LL_stack
-  0.00      0.00     0.00        3     0.00     0.00  push_LL
-  0.00      0.00     0.00        2     0.00     0.00  pop_LL
-  0.00      0.00     0.00        2     0.00     0.00  pop_arr
-  0.00      0.00     0.00        1     0.00     0.00  create_arr_stack
-  0.00      0.00     0.00        1     0.00     0.00  stack_impl_array
-  0.00      0.00     0.00        1     0.00     0.00  stack_impl_linkedList
+  0.00      0.00     0.00        1     0.00     0.00  check_balanced_parenthesis
+  0.00      0.00     0.00        1     0.00     0.00  isClosingBracket
+  0.00      0.00     0.00        1     0.00     0.00  isNullPtr
+  0.00      0.00     0.00        1     0.00     0.00  isOpeningBracket
+  0.00      0.00     0.00        1     0.00     0.00  isParenthesisBalanced
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -61,87 +50,24 @@ notice and this notice are preserved.
 granularity: each sample hit covers 4 byte(s) no time propagated
 
 index % time    self  children    called     name
-                0.00    0.00       4/54          pop_arr [13]
-                0.00    0.00       6/54          is_arr_empty [6]
-                0.00    0.00       8/54          is_arr_full [3]
-                0.00    0.00       8/54          print_arr_stack [8]
-                0.00    0.00      12/54          peek_arr [7]
-                0.00    0.00      16/54          push_arr [5]
-[1]      0.0    0.00    0.00      54         isNullPtr [1]
+                0.00    0.00       1/1           main [18]
+[1]      0.0    0.00    0.00       1         check_balanced_parenthesis [1]
+                0.00    0.00       1/1           isParenthesisBalanced [5]
 -----------------------------------------------
-                0.00    0.00       2/8           pop_LL [12]
-                0.00    0.00       3/8           push_LL [11]
-                0.00    0.00       3/8           peek_LL [9]
-[2]      0.0    0.00    0.00       8         isNullPtr [2]
+                0.00    0.00       1/1           isParenthesisBalanced [5]
+[2]      0.0    0.00    0.00       1         isClosingBracket [2]
 -----------------------------------------------
-                0.00    0.00       8/8           push_arr [5]
-[3]      0.0    0.00    0.00       8         is_arr_full [3]
-                0.00    0.00       8/54          isNullPtr [1]
+                0.00    0.00       1/1           isParenthesisBalanced [5]
+[3]      0.0    0.00    0.00       1         isNullPtr [3]
 -----------------------------------------------
-                0.00    0.00       2/8           pop_LL [12]
-                0.00    0.00       3/8           peek_LL [9]
-                0.00    0.00       3/8           print_LL_stack [10]
-[4]      0.0    0.00    0.00       8         is_list_empty [4]
+                0.00    0.00       1/1           isParenthesisBalanced [5]
+[4]      0.0    0.00    0.00       1         isOpeningBracket [4]
 -----------------------------------------------
-                0.00    0.00       8/8           stack_impl_array [15]
-[5]      0.0    0.00    0.00       8         push_arr [5]
-                0.00    0.00      16/54          isNullPtr [1]
-                0.00    0.00       8/8           is_arr_full [3]
------------------------------------------------
-                0.00    0.00       2/6           pop_arr [13]
-                0.00    0.00       4/6           peek_arr [7]
-[6]      0.0    0.00    0.00       6         is_arr_empty [6]
-                0.00    0.00       6/54          isNullPtr [1]
------------------------------------------------
-                0.00    0.00       4/4           stack_impl_array [15]
-[7]      0.0    0.00    0.00       4         peek_arr [7]
-                0.00    0.00      12/54          isNullPtr [1]
-                0.00    0.00       4/6           is_arr_empty [6]
------------------------------------------------
-                0.00    0.00       4/4           stack_impl_array [15]
-[8]      0.0    0.00    0.00       4         print_arr_stack [8]
-                0.00    0.00       8/54          isNullPtr [1]
------------------------------------------------
-                0.00    0.00       3/3           stack_impl_linkedList [16]
-[9]      0.0    0.00    0.00       3         peek_LL [9]
-                0.00    0.00       3/8           isNullPtr [2]
-                0.00    0.00       3/8           is_list_empty [4]
------------------------------------------------
-                0.00    0.00       3/3           stack_impl_linkedList [16]
-[10]     0.0    0.00    0.00       3         print_LL_stack [10]
-                0.00    0.00       3/8           is_list_empty [4]
------------------------------------------------
-                0.00    0.00       3/3           stack_impl_linkedList [16]
-[11]     0.0    0.00    0.00       3         push_LL [11]
-                0.00    0.00       3/8           isNullPtr [2]
------------------------------------------------
-                0.00    0.00       2/2           stack_impl_linkedList [16]
-[12]     0.0    0.00    0.00       2         pop_LL [12]
-                0.00    0.00       2/8           isNullPtr [2]
-                0.00    0.00       2/8           is_list_empty [4]
------------------------------------------------
-                0.00    0.00       2/2           stack_impl_array [15]
-[13]     0.0    0.00    0.00       2         pop_arr [13]
-                0.00    0.00       4/54          isNullPtr [1]
-                0.00    0.00       2/6           is_arr_empty [6]
------------------------------------------------
-                0.00    0.00       1/1           stack_impl_array [15]
-[14]     0.0    0.00    0.00       1         create_arr_stack [14]
------------------------------------------------
-                0.00    0.00       1/1           main [22]
-[15]     0.0    0.00    0.00       1         stack_impl_array [15]
-                0.00    0.00       8/8           push_arr [5]
-                0.00    0.00       4/4           peek_arr [7]
-                0.00    0.00       4/4           print_arr_stack [8]
-                0.00    0.00       2/2           pop_arr [13]
-                0.00    0.00       1/1           create_arr_stack [14]
------------------------------------------------
-                0.00    0.00       1/1           main [22]
-[16]     0.0    0.00    0.00       1         stack_impl_linkedList [16]
-                0.00    0.00       3/3           peek_LL [9]
-                0.00    0.00       3/3           print_LL_stack [10]
-                0.00    0.00       3/3           push_LL [11]
-                0.00    0.00       2/2           pop_LL [12]
+                0.00    0.00       1/1           check_balanced_parenthesis [1]
+[5]      0.0    0.00    0.00       1         isParenthesisBalanced [5]
+                0.00    0.00       1/1           isNullPtr [3]
+                0.00    0.00       1/1           isClosingBracket [2]
+                0.00    0.00       1/1           isOpeningBracket [4]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -234,9 +160,5 @@ notice and this notice are preserved.
 
 Index by function name
 
-  [14] create_arr_stack        [9] peek_LL                [11] push_LL
-   [1] isNullPtr               [7] peek_arr                [5] push_arr
-   [2] isNullPtr              [12] pop_LL                 [15] stack_impl_array
-   [6] is_arr_empty           [13] pop_arr                [16] stack_impl_linkedList
-   [3] is_arr_full            [10] print_LL_stack
-   [4] is_list_empty           [8] print_arr_stack
+   [1] check_balanced_parenthesis [3] isNullPtr            [5] isParenthesisBalanced
+   [2] isClosingBracket        [4] isOpeningBracket

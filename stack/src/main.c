@@ -1,5 +1,24 @@
 #include "stacks.h"
 
+static int check_balanced_parenthesis(void)
+{
+	char exp[100];
+	int ret;
+
+	printf("Enter a expression to check for balanced parenthesis\n");
+	scanf("%s" ,exp);
+
+	ret = isParenthesisBalanced(exp);
+	if (-EINVAL == ret)
+		printf("Given Expression is Invalid, Try again!\n");
+	else if(true == ret)
+		printf("Given Expression has balanced parenthesis\n");
+	else
+		printf("Given Expression has unbalanced parenthesis\n");
+
+	return 0;
+}
+
 static int stack_impl_array(void)
 {
 	struct Stack stack;
@@ -74,6 +93,7 @@ int main(void)
 {
 	int ret = 0;
 
+#if 0
 	ret = stack_impl_array();
 	if(ret)
 	{
@@ -85,6 +105,14 @@ int main(void)
 	if(ret)
 	{
 		printf("stack implementation with linkedLists failed\n");
+		return ret;
+	}
+
+#endif
+	ret = check_balanced_parenthesis();
+	if(ret)
+	{
+		printf("check balanced parenthesis implementation failed\n");
 		return ret;
 	}
 

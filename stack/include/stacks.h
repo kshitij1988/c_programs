@@ -38,4 +38,5 @@ int push_LL(struct Node **top, int data);
 int pop_LL(struct Node **top);
 int peek_LL(struct Node *top, int *val);
 int print_LL_stack(struct Node *top);
+int isParenthesisBalanced(const char *str);
 #endif //STACKS_H
