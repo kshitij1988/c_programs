@@ -1,5 +1,23 @@
 #include "stacks.h"
 
+static int next_greater_element(void)
+{
+	int arr[] = {11,13,21,3};
+	int ret;
+	size_t size;
+
+	size = sizeof(arr)/sizeof(arr[0]);
+
+	ret = next_greater_element_wo_stack(arr ,size);
+	if(ret)
+		return ret;
+	ret = next_greater_element_w_stack(arr ,size);
+	if(ret)
+		return ret;
+
+	return 0;
+}
+
 static int check_balanced_parenthesis(void)
 {
 	char exp[100];
@@ -108,13 +126,19 @@ int main(void)
 		return ret;
 	}
 
-#endif
 	ret = check_balanced_parenthesis();
 	if(ret)
 	{
 		printf("check balanced parenthesis implementation failed\n");
 		return ret;
 	}
+#endif
 
+	ret = next_greater_element();
+	if(ret)
+	{
+		printf("next greater element implementation failed\n");
+		return ret;
+	}
 	return 0;
 }
