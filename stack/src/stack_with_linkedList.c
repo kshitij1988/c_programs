@@ -126,7 +126,7 @@ int print_LL_stack(struct Node *top)
 		return 0;
 	}
 
-	printf("Current stack values are:\n");
+	printf("Current values are:\n");
 	while(current != NULL)
 	{
 		printf("%d\n" ,current->data);

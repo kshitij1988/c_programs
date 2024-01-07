@@ -41,4 +41,9 @@ int print_LL_stack(struct Node *top);
 int isParenthesisBalanced(const char *str);
 int next_greater_element_wo_stack(int *arr, size_t size);
 int next_greater_element_w_stack(int *arr, size_t size);
+int enqueue_QAS(struct Node **stack, int element);
+int dequeue_QAS(struct Node **stack);
+int getFront_QAS(struct Node *stack, int *front);
+int getRear_QAS(struct Node *stack, int *rear);
+int print_QAS(struct Node *stack);
 #endif //STACKS_H

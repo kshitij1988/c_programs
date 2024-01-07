@@ -1,5 +1,74 @@
 #include "stacks.h"
 
+static int queue_as_stack(void)
+{
+	struct Node *stack = NULL;
+	int front = 0;
+	int rear = 0;
+
+	printf("Trying invalid Dequeue operation\n");
+	dequeue_QAS(&stack);
+	printf("Trying invalid get Front operation\n");
+	getFront_QAS(stack, &front);
+	printf("Trying invalid get Rear operation\n");
+	getRear_QAS(stack, &rear);
+	printf("Trying invalid Print operation\n");
+	print_QAS(stack);
+
+	printf("Enqueueing 5 elements onto the stack\n");
+	enqueue_QAS(&stack, 915);
+	enqueue_QAS(&stack, 930);
+	enqueue_QAS(&stack, 945);
+	enqueue_QAS(&stack, 960);
+	enqueue_QAS(&stack, 975);
+	getFront_QAS(stack, &front);
+	printf("Current front of the queue is %d\n" ,front);
+	getRear_QAS(stack, &rear);
+	printf("Current rear of the queue is %d\n" ,rear);
+	print_QAS(stack);
+
+	printf("Dequeueing 2 element from the queue\n");
+	dequeue_QAS(&stack);
+	dequeue_QAS(&stack);
+	getFront_QAS(stack, &front);
+	printf("Current front of the queue is %d\n" ,front);
+	getRear_QAS(stack, &rear);
+	printf("Current rear of the queue is %d\n" ,rear);
+	print_QAS(stack);
+
+	printf("Enqueueing 2 elements onto the stack\n");
+	enqueue_QAS(&stack, 915);
+	enqueue_QAS(&stack, 930);
+	getFront_QAS(stack, &front);
+	printf("Current front of the queue is %d\n" ,front);
+	getRear_QAS(stack, &rear);
+	printf("Current rear of the queue is %d\n" ,rear);
+	print_QAS(stack);
+
+	printf("Dequeueing 1 element from the queue\n");
+	dequeue_QAS(&stack);
+	getFront_QAS(stack, &front);
+	printf("Current front of the queue is %d\n" ,front);
+	getRear_QAS(stack, &rear);
+	printf("Current rear of the queue is %d\n" ,rear);
+	print_QAS(stack);
+
+	printf("Dequeueing 3 element from the queue\n");
+	dequeue_QAS(&stack);
+	dequeue_QAS(&stack);
+	dequeue_QAS(&stack);
+	getFront_QAS(stack, &front);
+	printf("Current front of the queue is %d\n" ,front);
+	getRear_QAS(stack, &rear);
+	printf("Current rear of the queue is %d\n" ,rear);
+	print_QAS(stack);
+
+	printf("Dequeueing 2 element from the queue\n");
+	dequeue_QAS(&stack);
+	dequeue_QAS(&stack);
+	return 0;
+}
+
 static int next_greater_element(void)
 {
 	int arr[] = {11,13,21,3};
@@ -132,12 +201,19 @@ int main(void)
 		printf("check balanced parenthesis implementation failed\n");
 		return ret;
 	}
-#endif
 
 	ret = next_greater_element();
 	if(ret)
 	{
 		printf("next greater element implementation failed\n");
+		return ret;
+	}
+#endif
+
+	ret = queue_as_stack();
+	if(ret)
+	{
+		printf("Queue as stack implementation failed\n");
 		return ret;
 	}
 	return 0;
